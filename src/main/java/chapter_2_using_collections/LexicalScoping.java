@@ -14,7 +14,6 @@ public class LexicalScoping {
      * is a powerful technique that lets us cache value from one
      * context to be used in other context*/
 
-
     //checkIfStartsWith() is a higher-order function that return a function
     //avoid this use - Lexical scoping results in race conditions
     public static Predicate<String> checkIfStartsWith(final String letter) {
