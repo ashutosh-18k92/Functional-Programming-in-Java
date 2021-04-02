@@ -1,4 +1,4 @@
-package chapter_4_design_with_lambda.delegation_using_method_ref;
+package chapter4.patterns.strategy;
 
 import java.util.List;
 import java.util.function.Predicate;

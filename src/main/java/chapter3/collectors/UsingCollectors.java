@@ -1,6 +1,6 @@
-package chapter_3_string_comparators_filters.collectors;
+package chapter3.collectors;
 
-import chapter_3_string_comparators_filters.comparator.Person;
+import chapter3.comparator.Person;
 
 import java.util.ArrayList;
 import java.util.Arrays;

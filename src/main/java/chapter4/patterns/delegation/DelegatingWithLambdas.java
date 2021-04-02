@@ -1,10 +1,12 @@
-package chapter_4_design_with_lambda.delegation;
+package chapter4.patterns.delegation;
 
 import java.math.BigDecimal;
 import java.util.function.Function;
 
 public class DelegatingWithLambdas {
-    /*Strategy pattern : separting a concern either from a class or method*/
+    /*Strategy pattern : separating a concern either from a class or method
+    * ----------------------------------------------------------------------*/
+
     /*Rather than delegating part o the responsibility to another class,
      * we can delegate it to lambda expressions and method references*/
 
@@ -39,27 +41,24 @@ public class DelegatingWithLambdas {
         final Function<String, BigDecimal> yho = (stock) -> new BigDecimal(200);
         CalculateNAV c1 = new CalculateNAV(yho);
         System.out.printf("100 shares of Yahoo worth: $%.2f%n", c1.computeStockWorthv1("GOOG", 100));
-        final Function<String,BigDecimal> wst = (stock)->new BigDecimal(20);
 
+
+        final Function<String,BigDecimal> wst = (stock)->new BigDecimal(20);
         c1 = new CalculateNAV(wst);
         System.out.printf("100 shares of WST worth: $%.2f%n", c1.computeStockWorthv1("GOOG", 100));
 
+
+
+        //or pass the lambda directly
         c1 = new CalculateNAV((Function<String, BigDecimal>)  stock->new BigDecimal(30));
         System.out.printf("100 shares of WST worth: $%.2f%n", c1.computeStockWorthv1("GOOG", 100));
 
-
-        /*Segregation of concern using method reference */
-        /*Sorry we had to explicitly cast*/
-         c1 = new CalculateNAV((Function<String, BigDecimal>) TickerMethodRef::getTickerPrice);
-        System.out.printf("100 shares of WST worth: $%.2f%n", c1.computeStockWorthv1("GOOG", 100));
-
-        /*Segregation of concern using Interfaces*/
-        ITicker yahoo = new YahooFinance();
-        CalculateNAV c2 = new CalculateNAV(yahoo);
+        /*Segregation of concern using Interfaces
+        * -----------------------------------------------------------------*/
+        CalculateNAV c2 = new CalculateNAV(new YahooFinance());
         System.out.printf("100 shares of Yahoo worth: $%.2f%n", c2.computeStockWorthv2("GOOG", 100));
 
-        ITicker wallStreet = new WallStreet();
-        c2 = new CalculateNAV(wallStreet);
+        c2 = new CalculateNAV(new WallStreet());
         System.out.printf("100 shares of WST worth: $%.2f%n", c2.computeStockWorthv2("GOOG", 100));
 
 

@@ -1,4 +1,4 @@
-package chapter_4_design_with_lambda.delegation_using_method_ref;
+package chapter4.patterns.strategy;
 
 import java.util.Arrays;
 import java.util.List;
@@ -12,6 +12,8 @@ public class DesigningWithLambdas {
      * -> lightweight functions instead of objects
      * -> lambda expressions to easily separate logic form function
      * -> delegate responsibilities and implement the decorator pattern */
+
+
     public static void main(String[] args) {
 
         final List<Asset> assets = Arrays.asList(

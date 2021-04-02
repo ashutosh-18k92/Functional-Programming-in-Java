@@ -1,4 +1,4 @@
-package chapter_3_string_comparators_filters;
+package chapter3;
 
 public class IteratingChars {
     public static void main(String[] args) {

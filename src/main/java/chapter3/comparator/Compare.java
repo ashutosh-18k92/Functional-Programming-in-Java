@@ -1,4 +1,4 @@
-package chapter_3_string_comparators_filters.comparator;
+package chapter3.comparator;
 
 import java.util.Arrays;
 import java.util.Comparator;

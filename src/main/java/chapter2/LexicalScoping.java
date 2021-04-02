@@ -1,4 +1,4 @@
-package chapter_2_using_collections;
+package chapter2;
 
 /*Removing Duplication with Lexical Scoping*/
 

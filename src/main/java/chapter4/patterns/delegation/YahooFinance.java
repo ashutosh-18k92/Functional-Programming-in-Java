@@ -1,4 +1,4 @@
-package chapter_4_design_with_lambda.delegation;
+package chapter4.patterns.delegation;
 
 import java.math.BigDecimal;
 

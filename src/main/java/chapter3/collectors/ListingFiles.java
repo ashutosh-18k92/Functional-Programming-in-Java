@@ -1,4 +1,4 @@
-package chapter_3_string_comparators_filters.collectors;
+package chapter3.collectors;
 
 
 import java.io.IOException;
